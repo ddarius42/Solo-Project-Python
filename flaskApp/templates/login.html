@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <h1 class="logo">CarGram</h1>
+    <div class="main">
+        <p class="introduction">Hey and welcome to a social media platform where car enthusiast
+            can connect and collab. Have fun and be respectful of everybody's build.</p>
+        <h2>Login</h2>
+        <div class="login-form">
+            <form action="/login">
+                <div class="form-name">
+                    <label for="name">Name:</label>
+                    <input type="text" name="formName">
+                </div>
+                <div class="form-email">
+                    <label for="email">Email:</label>
+                    <input type="text" name="formEmail">
+                </div>
+                <div class="form-password">
+                    <label for="password">Password:</label>
+                    <input type="password" name="formPassword">
+                </div>
+                <div class="form-confirm">
+                    <label for="confrimPassword">Confirm Password:</label>
+                    <input type="password" name="confirmPassword">
+                </div>
+                <input class="submit" type="submit">
+            </form>
+
+        </div>
+    </div>
+</body>
+
+</html>
