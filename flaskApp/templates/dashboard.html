@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='dashStyle.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div class="nav">
+        <table>
+            <th>
+                <div class="nav-links">
+                    <tr>
+                        <td><a href="/newPostPage">New Post</a></td>
+                        <td><a href="/{{userId}}/likes">Liked</a></td>
+                        <td><a href="/{{userId}}/profile"> Profile</a></td>
+                        <td><a href="/logout">Logout</a></td>
+                    </tr>
+                </div>
+                <h2>CarGram</h2>
+        </table>
+    </div>
+
+
+    <h1>{{user.firstName}}'s feed!</h1>
+
+    {%for post in posts%}
+    <div class="allPosts">
+        <p class="username">{{post.firstName}}</p>
+        <img src="{{post.image}}" alt="picture of car">
+        <div class="post-footer">
+            <p class="description">{{post.description}}</p>
+            <form action="/comment/{{user.id}}" method="POST">
+                <label for="comment">Add a Comment</label>
+                <input type="text" name="formComment">
+                <input type="hidden" name="formPostId" value="{{post.id}}">
+                <input class="add" type="submit" value="add">
+            </form>
+            {%for comment in comments%}
+            <p class="user-comment">{{comment.firstName}}:{{comment.comment}}</p>
+            {%endfor%}
+            <div class="likes-comments">
+
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+
+</body>
+
+</html>

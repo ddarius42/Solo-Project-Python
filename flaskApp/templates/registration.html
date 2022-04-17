@@ -10,11 +10,11 @@
 </head>
 
 <body>
+
     <h1 class="logo">CarGram</h1>
     <div class="main">
-        <p class="introduction">Hey and welcome to a social media platform where car enthusiast
-            can connect and collab. Have fun and be respectful of everybody's build.</p>
-        <h2>Login</h2>
+        <p class="introduction">Create an account and introduce yourself to the community</p>
+        <h2>Register</h2>
         {%with messages = get_flashed_messages()%}
         {%if messages%}
         {%for message in messages%}
@@ -23,7 +23,15 @@
         {%endif%}
         {%endwith%}
         <div class="login-form">
-            <form action="/login" method="POST">
+            <form action="/register" method="POST">
+                <div class="form-name">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" name="formFirstName">
+                </div>
+                <div class="form-name">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" name="formLastName">
+                </div>
                 <div class="form-email">
                     <label for="email">Email:</label>
                     <input type="text" name="formEmail">
@@ -32,11 +40,15 @@
                     <label for="password">Password:</label>
                     <input type="password" name="formPassword">
                 </div>
-                <input class="submit-login" type="submit">
-                <a class="register-button" href="/registrationPage">Don't have an account? Register here</a>
+                <div class="form-confirm">
+                    <label for="confrimPassword">Confirm Password:</label>
+                    <input type="password" name="confirmPassword">
+                </div>
+                <input class="submit" type="submit">
+                <a class="register-button" href="/">Back to Login Page.</a>
             </form>
-        </div>
 
+        </div>
     </div>
 </body>
 

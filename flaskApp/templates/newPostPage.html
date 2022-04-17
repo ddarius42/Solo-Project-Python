@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='dashStyle.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewPost</title>
+</head>
+
+<body>
+    <div class="nav">
+        <table>
+            <th>
+                <div class="nav-links">
+                    <tr>
+                        <td><a href="/dashboard">Home</a></td>
+                        <td><a href="/{{userId}}/likes">Liked</a></td>
+                        <td><a href="/{{userId}}/profile"> Profile</a></td>
+                        <td><a href="/logout">Logout</a></td>
+                    </tr>
+                </div>
+                <h2>CarGram</h2>
+        </table>
+    </div>
+    <h1>Upload from computer button coming soon!!! ;) </h1>
+    <div class="login-form">
+        <form action="/newPost" method="POST">
+            <label for="formImage">Insert car Image link</label>
+            <input type="text" name="formImageLink">
+            <label for="formDescription">Description</label>
+            <input type="text" name="formDescription">
+            <input class="submit" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+
+</html>
