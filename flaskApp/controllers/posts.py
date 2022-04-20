@@ -9,15 +9,12 @@ def dashboard():
     if 'userId' not in session:
         flash('Must be logged in to view this page')
         return redirect('/')
-    postData={
+    userData={
         'id': session['userId']
     }
-    commentData={
-        'post_id': 5
-    }
     posts=Post.getUsernameWithPost()
-    comments=Comment.getCommentWithPost(commentData)
-    return render_template('dashboard.html', user=User.getById(postData), posts=posts,comments=comments)
+    comments=Comment.getCommentWithPost()
+    return render_template('dashboard.html', user=User.getById(userData), posts=posts,comments=comments)
 
 
 @app.route("/newPostPage")
@@ -46,5 +43,43 @@ def newPost():
     Post.createPost(data)
     return redirect('/dashboard')
 
+@app.route('/profile')
+def liked():
+    if 'userId' not in session:
+        flash('Must be logged in to view this page')
+        return redirect('/')
+    data={
+        "users_id": session['userId']
+    }
+    userData={
+        'id': session['userId']
+    }
+    userPost=Post.getPostByUser(data)
+    return render_template('profile.html',userPost=userPost, user=User.getById(userData),)
 
+
+@app.route('/editPostPage/<postId>')
+def editPostPage(postId):
     
+    data={
+        "postId": postId
+    }
+    postById=Post.getPostById(data)
+    return render_template('editPost.html',postById=postById)
+
+@app.route('/editPost/<postId>', methods=['POST'])
+def editPost(postId):
+    data={
+        "postId": postId,
+        "postDescription": request.form['formDescription']
+    }
+    Post.updatePost(data)
+    return redirect('/profile')
+
+@app.route('/deletePost/<postId>')
+def deletePost(postId):
+    data={
+        "postId": postId
+    }
+    Post.deletePost(data)
+    return redirect('/profile')

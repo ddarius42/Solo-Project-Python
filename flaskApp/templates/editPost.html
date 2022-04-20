@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='dashStyle.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img class="editImage" src="{{postById.image}}" alt="picture of car">
+    <form class="editPageForm" action="/editPost/{{postById.id}}" method="POST">
+        <label class="edit-page-label" for="description">Description: </label>
+        <input class="editPage-input" type="text" name="formDescription" value="{{postById.description}}">
+        <input class="submit-login" type="submit" value="submit">
+    </form>
+    <div class="editPageLinks">
+        <a class="editPage-link" href="/profile">Cancel</a>
+        <a class="editPage-link" href="/deletePost">Delete Post</a>
+    </div>
+</body>
+
+</html>

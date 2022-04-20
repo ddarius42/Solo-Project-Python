@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='dashStyle.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="nav">
+        <table>
+            <th>
+                <div class="nav-links">
+                    <tr>
+                        <td><a href="/dashboard">Home</a></td>
+                        <td><a href="/newPostPage">New Post</a></td>
+                        <!-- <td><a href="/liked">Liked</a></td> -->
+                        <td><a href="/logout">Logout</a></td>
+                    </tr>
+                </div>
+                <h2>CarGram</h2>
+        </table>
+    </div>
+    <div class="userDetails">
+        <p class="fullName">{{user.firstName}} {{user.lastName}}</p>
+        <h1>Profile</h1>
+    </div>
+    {%for post in userPost%}
+    {%if post.users_id == session['userId']%}
+    <div class="allPosts">
+        <img src="{{post.image}}" alt="picture of car">
+        <div class="post-footer">
+            <p class="description">{{post.description}}</p>
+            <div class="editPageLinks">
+                <a class="editPage-link" href="/editPostPage/{{post.id}}">Edit</a>
+                <a class="editPage-link" href="/deletePost/{{post.id}}">Delete</a>
+            </div>
+        </div>
+        {%endif%}
+        {%endfor%}
+        {%if userPost | length == 0 %}
+        <h1>no posts to be found</h1>
+        {%endif%}
+
+
+</body>
+
+</html>

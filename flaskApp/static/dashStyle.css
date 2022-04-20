@@ -18,12 +18,11 @@ body{
 }
 
 h2{
-    color: white;
-	-webkit-text-stroke: 2px rgba(0, 0, 0, 0.795);
+	-webkit-text-stroke: 2px wheat;
     margin-top: 5px;
     margin-left: 20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: rgb(0, 130, 190);
+    color: rgba(0, 25, 107, 0.774);
     text-align: center;
     font-size: 6vh;
     letter-spacing: 2px;
@@ -34,26 +33,27 @@ h1{
     font-size: 60px;
     text-align: center;
 }
+
 td{
     margin-top: 30px;
     align-self: center;
     
 }
 a{
-    background-color: rgb(0, 130, 190);
+    background-color: rgba(0, 25, 107, 0.774);
     cursor: pointer;
     border-radius:30rem;
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-size: 2.5vh;
     padding: 10px;
-    color: beige;
+    color: wheat;
     text-decoration: none;
     margin: 2.8vh;
 
 }
 a:hover{
     background-color: rgb(255, 249, 169);
-    color: rgb(66, 66, 66);
+    color: rgb(3, 19, 73);
 }
 
 .allPosts{
@@ -63,12 +63,46 @@ a:hover{
     background-color: rgb(255, 242, 221);
     border-radius: 2rem;
     padding: 10px;
-    
+}
+
+.fullName{
+    text-align:right;
+    margin: 3% 20%;
+    font-size: 50px;
+}
+
+.username{
+    color: wheat;
+    font-size: 40px;
+    margin: 20px;
+    background-color: rgba(0, 25, 107, 0.774);
+    border-radius: 2.7rem;
+    width: fit-content;
+    padding: 3px 10px;
+}
+
+.post-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dash-post-footer{
+    display: flex;
+    align-items: center;
 }
 
 img{
     width: 100%;
     border-radius: 2rem;
+}
+
+.description{
+    font-size: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+    width: 500px;
+    margin-left:30px ;
 }
 
 .login-form{
@@ -77,16 +111,54 @@ img{
     justify-content: center;
 }
 
+.submit-login{
+    font-size: 30px;
+    background-color: rgb(39, 50, 68);
+    color: rgb(235, 202, 154);
+    padding: 10px;
+    height: auto;
+    width: auto;
+    border-radius: 10%;
+    border: solid black;
+    border-width: 2px 4px 4px 2px;
+    cursor: pointer;
+
+}
+
 
 
 label{
-    
     color: rgb(235, 202, 154);
     background-color: rgba(4, 34, 4, 0.192);
     border-radius: 30rem;
     padding: 5px;
     align-self: flex-end;
     font-size: 40px;
+}
+
+.editImage{
+    width: 96.5%;
+    margin: 50px;
+}
+
+.edit-page-label{
+    margin: none;
+    color: rgb(39, 50, 68);
+    background-color:transparent;
+    border-radius: 30rem;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 50px;
+}
+
+.dash-page-label{
+    margin: none;
+    color: rgb(39, 50, 68);
+    background-color:transparent;
+    border-radius: 30rem;
+    padding: 5px;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 input{
@@ -100,6 +172,64 @@ input{
     border-width: 0px;
     border-radius:5em;
     font-size: 25px;
+}
+
+.editPageForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.editPage-input{
+    margin: none;
+    grid-template-rows: 3;
+    cursor: text;
+    color: blanchedalmond;
+    background-color:  rgb(45, 52, 65);
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+    height: 25px;
+    border-width: 0px;
+    border-radius:5em;
+    font-size: 30px;
+}
+
+.dash-page-input{
+    margin: none;
+    grid-template-rows: 3;
+    cursor: text;
+    color: blanchedalmond;
+    background-color:  rgba(0, 25, 107, 0.774);
+    text-align: center;
+    padding: 10px;
+    width: 30%;
+    height: 25px;
+    border-width: 0px;
+    border-radius:5em;
+    font-size: 20px;
+}
+
+.editPageLinks{
+    display: flex;
+    justify-content: center;
+}
+
+.editPage-link{
+    text-align: center;
+    background-color: rgb(39, 50, 68);
+    cursor: pointer;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 35px;
+    padding: 10px;
+    color: beige;
+    text-decoration: none;
+}
+
+.editPage-link:hover{
+    background-color: rgb(235, 202, 154);
+    color: rgb(39, 50, 68);
 }
 
 .submit{
@@ -118,15 +248,22 @@ input{
 }
 
 .add{
-    font-size: 30px;
+    font-size: 1.5vh;
     margin-top: 30px;
     background-color: rgb(39, 50, 68);
     color: rgb(235, 202, 154);
-    padding: 10px;
+    padding: 5px 10px;
     height: auto;
     width: auto;
     border-radius: 10%;
     border: solid black;
     border-width: 2px 4px 4px 2px;
     cursor: pointer;
+}
+
+.user-comment{
+    margin: 10px;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
