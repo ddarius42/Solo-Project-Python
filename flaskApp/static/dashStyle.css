@@ -28,9 +28,11 @@ h2{
     letter-spacing: 2px;
 }
 h1{
-    
+    font-family:"Comic Sans MS", "Comic Sans", cursive;
+    -webkit-text-stroke: 3px black;
+    color: wheat;
     margin: 20px;
-    font-size: 60px;
+    font-size: 70px;
     text-align: center;
 }
 
@@ -137,8 +139,17 @@ label{
 }
 
 .editImage{
-    width: 96.5%;
-    margin: 50px;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.profileImage{
+    width:100%;
+    border-radius: 2rem;
 }
 
 .edit-page-label{

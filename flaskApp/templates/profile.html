@@ -22,16 +22,17 @@
                     </tr>
                 </div>
                 <h2>CarGram</h2>
+                <h1>Profile</h1>
         </table>
     </div>
     <div class="userDetails">
         <p class="fullName">{{user.firstName}} {{user.lastName}}</p>
-        <h1>Profile</h1>
+
     </div>
     {%for post in userPost%}
     {%if post.users_id == session['userId']%}
     <div class="allPosts">
-        <img src="{{post.image}}" alt="picture of car">
+        <img class="profileImage" src="{{post.image}}" alt="picture of car">
         <div class="post-footer">
             <p class="description">{{post.description}}</p>
             <div class="editPageLinks">

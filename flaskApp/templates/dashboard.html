@@ -16,17 +16,17 @@
                 <div class="nav-links">
                     <tr>
                         <td><a href="/newPostPage">New Post</a></td>
-                        <td><a href="/liked">Liked</a></td>
                         <td><a href="/profile"> Profile</a></td>
                         <td><a href="/logout">Logout</a></td>
                     </tr>
                 </div>
                 <h2>CarGram</h2>
+                <h1>{{user.firstName}}'s feed!</h1>
         </table>
     </div>
 
 
-    <h1>{{user.firstName}}'s feed!</h1>
+
 
     {%for post in posts%}
     <div class="allPosts">
